@@ -17,12 +17,19 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
+# common msm8660 configs
+$(call inherit-product, device/htc/msm8660-common/msm8660.mk)
+
 DEVICE_PACKAGE_OVERLAYS += device/htc/pyramid/overlay
 
 # GPS and Light
 PRODUCT_PACKAGES += \
     gps.pyramid \
     lights.pyramid
+
+# Torch
+PRODUCT_PACKAGES += \
+    Torch
 
 ## The gps config appropriate for this device
 PRODUCT_COPY_FILES += device/common/gps/gps.conf_EU:system/etc/gps.conf
@@ -102,19 +109,11 @@ PRODUCT_COPY_FILES += \
 
 ## misc
 PRODUCT_PROPERTY_OVERRIDES += \
+    windowsmgr.max_events_per_sec=240 \
     ro.setupwizard.enable_bypass=1 \
     dalvik.vm.lockprof.threshold=500 \
     ro.com.google.locationfeatures=1 \
     dalvik.vm.dexopt-flags=m=y
-
-# Device uses high-density artwork where available
-PRODUCT_AAPT_CONFIG := normal hdpi
-PRODUCT_AAPT_PREF_CONFIG := hdpi
-PRODUCT_LOCALES += en_US hdpi
-
-# Don't set /proc/sys/vm/dirty_ratio to 0 when USB mounting
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vold.umsdirtyratio=20
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 LOCAL_KERNEL := device/htc/pyramid/prebuilt/kernel
@@ -130,8 +129,8 @@ PRODUCT_COPY_FILES += \
 # call the proprietary setup
 $(call inherit-product-if-exists, vendor/htc/pyramid/pyramid-vendor.mk)
 
-# common msm8660 configs
-$(call inherit-product, device/htc/msm8660-common/msm8660.mk)
+# call the gapps setup
+$(call inherit-product-if-exists, vendor/google/gapps.mk)
 
 # media profiles and capabilities spec
 $(call inherit-product, device/htc/pyramid/media_a1026.mk)

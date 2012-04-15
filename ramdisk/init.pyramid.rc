@@ -45,15 +45,15 @@ on early-fs
     symlink /vendor/firmware/misc/modem.b00 /vendor/firmware/modem.b00
     symlink /vendor/firmware/misc/modem.mdt /vendor/firmware/modem.mdt
 
-    symlink /system/vendor/firmware/fw_bcmdhd.bin /vendor/firmware/fw_bcmdhd.bin
-    symlink /system/vendor/firmware/fw_bcmdhd_apsta.bin /vendor/firmware/fw_bcmdhd_apsta.bin
-    symlink /system/vendor/firmware/fw_bcmdhd_p2p.bin /vendor/firmware/fw_bcmdhd_p2p.bin
-    symlink /system/vendor/firmware/bcm4329.hcd /vendor/firmware/bcm4329.hcd
-
     mount ext4 /dev/block/mmcblk0p22 /system wait ro data=ordered noauto_da_alloc
     mount ext4 /dev/block/mmcblk0p23 /data wait noatime nosuid nodev data=ordered noauto_da_alloc
     mount ext4 /dev/block/mmcblk0p24 /cache wait noatime nosuid nodev data=ordered noauto_da_alloc
     mount ext4 /dev/block/mmcblk0p27 /devlog wait noatime nosuid nodev data=ordered noauto_da_alloc
+
+    symlink /system/vendor/firmware/fw_bcmdhd.bin /vendor/firmware/fw_bcmdhd.bin
+    symlink /system/vendor/firmware/fw_bcmdhd_apsta.bin /vendor/firmware/fw_bcmdhd_apsta.bin
+    symlink /system/vendor/firmware/fw_bcmdhd_p2p.bin /vendor/firmware/fw_bcmdhd_p2p.bin
+    symlink /system/vendor/firmware/bcm4329.hcd /vendor/firmware/bcm4329.hcd
 
     # double check the perms and set owner
     chown root root /devlog

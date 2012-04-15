@@ -36,8 +36,7 @@ BOARD_KERNEL_PAGE_SIZE := 2048
 BOARD_KERNEL_CMDLINE := console=ttyHSL0 androidboot.hardware=pyramid no_console_suspend=1
 
 # QCOM Gralloc/Copybit/HWcomposer
-TARGET_USES_OVERLAY := false
-TARGET_NUM_FB_DEVICES := 2
+COMMON_GLOBAL_CFLAGS += -DQCOM_ROTATOR_KERNEL_FORMATS
 
 #Camera
 BOARD_HAVE_HTC_FFC := true
