@@ -12,6 +12,7 @@ dev.pm.dyn_samplingrate=1
 #cm qcom build lub
 com.qc.hardware=true
 com.qc.hdmi_out=true
+ro.hdmi.enable=true
 
 rild.libpath=/system/lib/libhtc_ril.so
 # htc v4 ril
