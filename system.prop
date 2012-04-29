@@ -3,7 +3,7 @@
 #
 
 debug.sf.hw=1
-debug.composition.type=c2d
+debug.composition.type=dyn
 ro.sf.compbypass.enable=1
 debug.enabletr=true
 dev.pm.dyn_samplingrate=1
