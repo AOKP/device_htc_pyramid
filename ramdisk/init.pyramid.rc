@@ -55,6 +55,7 @@ on early-fs
     symlink /system/vendor/firmware/fw_bcmdhd_p2p.bin /vendor/firmware/fw_bcmdhd_p2p.bin
     symlink /system/vendor/firmware/bcm4329.hcd /vendor/firmware/bcm4329.hcd
 
+on post-fs-data
     # double check the perms and set owner
     chown root root /devlog
     chmod 0700 /devlog
@@ -84,6 +85,9 @@ on early-fs
 
     mkdir /data/radio 0770 radio radio
     chmod 2770 /data/radio
+
+    # Set indication (checked by vold) that we have finished this action
+    setprop vold.post_fs_data_done 1
 
 on init
     # bluetooth power up/down interface
