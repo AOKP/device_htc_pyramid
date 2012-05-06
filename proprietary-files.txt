@@ -63,9 +63,6 @@ lib/libv8.so
 # Radio
 lib/libhtc_ril.so
 
-#Lights
-lib/hw/lights.msm8660.so
-
 # Sensors
 lib/hw/sensors.pyramid.so
 lib/libmllite.so

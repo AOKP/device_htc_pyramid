@@ -25,7 +25,7 @@ DEVICE_PACKAGE_OVERLAYS += device/htc/pyramid/overlay
 # GPS and Light
 PRODUCT_PACKAGES += \
     gps.pyramid \
-    lights.msm8660
+    lights.pyramid
 
 # Torch
 PRODUCT_PACKAGES += \
