@@ -25,11 +25,11 @@
 #include <fcntl.h>
 #include <pthread.h>
 
-
 #include <sys/ioctl.h>
 #include <sys/types.h>
 
 #include <hardware/lights.h>
+#include "leds-pm8058.h"
 
 #include <linux/input.h>
 #include <time.h>
@@ -354,6 +354,44 @@ static int open_lights (const struct hw_module_t* module, char const* name, stru
 	return 0;
 
 }
+
+/******************************************************************************/
+
+static struct pm8058_led_config pm_led_config[] = {
+    {
+        .name = "green",
+        .type = PM8058_LED_RGB,
+	.bank = 0,
+	.pwm_size = 9,
+	.clk = PM_PWM_CLK_32KHZ,
+	.pre_div = PM_PWM_PREDIVIDE_2,
+	.pre_div_exp = 1,
+	.pwm_value = 511,
+    },
+    {
+	.name = "amber",
+	.type = PM8058_LED_RGB,
+	.bank = 1,
+	.pwm_size = 9,
+	.clk = PM_PWM_CLK_32KHZ,
+	.pre_div = PM_PWM_PREDIVIDE_2,
+	.pre_div_exp = 1,
+	.pwm_value = 511,
+    },
+    {
+        .name = "button-backlight",
+	.type = PM8058_LED_DRVX,
+	.bank = 6,
+	.flags = PM8058_LED_LTU_EN,
+	.start_index = 0,
+	.duites_size = 8,
+	.duty_time_ms = 32,
+	.out_current = 10,
+    },
+
+};
+
+/******************************************************************************/
 
 static struct hw_module_methods_t lights_module_methods = {
 	.open = open_lights,
