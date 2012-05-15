@@ -1,0 +1,8 @@
+Change-Id: Icd50bd04caf1211d9f0f474ab7fd84fc2eed11b3
+Code-Review+2: Jonathan Steadman <xxwhitehawk@gmail.com>
+Verified+1: Jonathan Steadman <xxwhitehawk@gmail.com>
+Submitted-by: Jonathan Steadman <xxwhitehawk@gmail.com>
+Submitted-at: Tue, 15 May 2012 18:07:52 -0500
+Reviewed-on: http://gerrit.sudoservers.com/817
+Project: AOKP/android_device_htc_pyramid
+Branch: refs/heads/ics
