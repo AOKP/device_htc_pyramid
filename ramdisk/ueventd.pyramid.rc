@@ -14,7 +14,6 @@
 /dev/pmem               0660    system      graphics
 
 # camera
-/dev/gemini0            0660    system      camera
 /dev/msm_camera/*       0660    system      camera
 /dev/pmem_smipool*      0660    system      camera
 /dev/pmem_camera*       0660    system      camera
@@ -37,6 +36,8 @@
 /dev/msm_pcm_in         0660    system      audio
 /dev/msm_pcm_lp_dec     0660    system      audio
 /dev/msm_pcm_out        0660    system      audio
+/dev/control0           0660    system      audio
+/dev/controlC0          0660    system      audio
 /dev/htc-acdb           0660    system      audio
 /dev/htc-acoustic       0660    system      audio
 /dev/adsp               0660    system      audio
@@ -47,6 +48,7 @@
 /dev/msm_vidc_dec_sec   0660    system      audio
 /dev/msm_vidc_enc       0660    system      audio
 /dev/msm_vidc_reg       0660    system      audio
+/dev/gemini*	        0660    system      audio
 /dev/msm_fm             0660    system      audio
 /dev/msm_mvs            0660    system      audio
 /dev/msm_qcelp_in       0660    system      audio
@@ -55,7 +57,11 @@
 /dev/msm_wmapro         0660    system      audio
 /dev/msm_aac_in         0660    system      audio
 /dev/msm_amrnb_in       0640    system      audio
+/dev/snd/dsp            0660    system      audio
+/dev/snd/dsp1           0660    system      audio
+/dev/snd/mixer          0660    system      audio
 
+/sys/module/serial/parameters/modem_enabled    0600    system  system
 /dev/ttyHSUSB0          0600    system      system
 /dev/ttySA0             0600    system      system
 /dev/smd0               0640    radio       radio
@@ -83,4 +89,5 @@
 # bluetooth
 /dev/ttyHS0             0600    bluetooth   bluetooth
 /dev/ttyHSL0            0600    bluetooth   bluetooth
+/dev/ttyMSM0            0600    bluetooth   bluetooth
 /dev/uinput             0660    system      bluetooth
