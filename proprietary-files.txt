@@ -13,9 +13,14 @@ bin/rmt_storage
 bin/qmuxd
 
 # Audio
+bin/snd
+bin/snd8k
+bin/sound8x60
 lib/libacdbloader.so
 lib/libacdbmapper.so
 lib/libaudcal.so
+lib/libaudcal_nel.so
+lib/libaudcalwb.so
 lib/libaudioalsa.so
 lib/libhtc_acoustic.so
 
