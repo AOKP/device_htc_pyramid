@@ -45,3 +45,10 @@ ro.phone_storage=0
 
 # System property for cabl
 ro.qualcomm.cabl=1
+
+# hardware info
+ro.device.cpu=1.2 GHz dual-core Qualcomm MSM8260 (S3) Snapdragon
+ro.device.gpu=Qualcomm Adreno 220
+ro.device.rear_cam=8 MP
+ro.device.front_cam=0.3 MP
+ro.device.screen_res=540x960
